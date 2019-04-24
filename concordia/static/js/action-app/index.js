@@ -232,6 +232,27 @@ export class ActionApp {
             .then(() => {
                 this.updateAvailableCampaignFilters();
             });
+        fetchJSON(this.config.urls.themeList)
+            .then(data => {
+                data.objects.forEach(theme => {
+                    let o = document.createElement('option');
+                    o.value = theme.id;
+                    o.textContent = theme.title;
+
+                    // TODO: this does not handle the case where the last assets of a campaign change state while the app is open
+                    Object.entries(theme.asset_stats).forEach(
+                        ([key, value]) => {
+                            o.dataset[key] = value;
+                        }
+                    );
+
+                    this.campaignSelect.appendChild(o);
+                });
+            })
+            .then(() => {
+                this.updateAvailableCampaignFilters();
+            });
+
         this.campaignSelect.addEventListener('change', () =>
             this.updateAssetList()
         );
