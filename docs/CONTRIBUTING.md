@@ -41,7 +41,7 @@ If you are proposing a feature:
 
 ### Get Started!
 
-Ready to contribute? Check out our [Developers’ Guide](https://github.com/LibraryOfCongress/docs/for-developers.md)
+Ready to contribute? Check out our [Developers’ Guide](https://github.com/LibraryOfCongress/concordia/blob/master/docs/for-developers.md)
 for information about running your own copy of the site and making changes.
 
 ## Contributing Changes
